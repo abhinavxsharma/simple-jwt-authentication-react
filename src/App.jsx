@@ -5,15 +5,10 @@ import Navbar from './components/Navbar';
 import ProtectedRoute from './components/ProtectedRoute';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
-import Theory from './pages/Theory';
 
 export default function App() {
   return (
     <AuthProvider>
-      {/* 
-        We use HashRouter to ensure 100% reliable routing on GitHub Pages
-        without needing custom server rewrite rules for 404s.
-      */}
       <Router>
         <div className="app-layout">
           <Navbar />
@@ -21,9 +16,6 @@ export default function App() {
             <Routes>
               {/* Public Login Route */}
               <Route path="/login" element={<Login />} />
-
-              {/* Educational Theory / Concepts Route */}
-              <Route path="/theory" element={<Theory />} />
 
               {/* Protected Dashboard Route */}
               <Route
@@ -42,17 +34,8 @@ export default function App() {
           </main>
           <footer className="app-footer">
             <div className="footer-container">
-              <p>
-                <strong>JWT Auth Demo</strong> &bull; Simple JWT Authentication Practical Assignment &bull; Client-Side Educational Demo
-              </p>
+              <p>JWT Auth Demo &bull; Client-Side Educational Simulation</p>
               <div className="footer-links">
-                <a
-                  href="#/theory"
-                  className="footer-link"
-                >
-                  Theory &amp; Flow
-                </a>
-                <span className="footer-divider">&bull;</span>
                 <span className="footer-tag">React + Vite</span>
               </div>
             </div>
